@@ -86,3 +86,100 @@ body {
 .exercise-button:hover {
   background-color: #3498db;
 }
+
+.hidden {
+  display: none;
+}
+
+.step {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.step.visible {
+  opacity: 1;
+}
+
+.next-button.hidden {
+  display: none;
+}
+
+.next-button {
+  background-color: #0033FF; /* Adjust the shade of blue to match your theme */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.next-button:focus {
+  outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Arial+Rounded+MT+Bold&display=swap');
+
+.hidden {
+    display: none;
+}
+
+.container {
+    text-align: center;
+}
+
+.exercise-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exercise-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+}
+
+.step {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    white-space: normal; /* Allow text to wrap */
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px; /* Ensure text container fits well within the layout */
+    margin: 0 auto; /* Center the text container */
+    text-align: center;
+}
+
+.step.visible {
+    opacity: 1;
+}
+
+.step.typing {
+    white-space: nowrap; /* Prevent wrapping for typing effect */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.exercise-button,
+.next-button {
+    background-color: #3498db; /* Consistent button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+}
+
+.next-button.hidden {
+    display: none;
+}
