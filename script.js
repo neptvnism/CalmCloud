@@ -1,12 +1,6 @@
 let currentStep = 1;
 let currentExercise = '';
 const exercises = {
-    diaphragmatic: 5,
-    478: 4,
-    box: 5,
-    mindful: 5,
-    counting: 3,
-    progressive: 5,
     54321: 6,
     mindfulness: 6,
     objects: 3,
@@ -33,6 +27,10 @@ function showStep(step) {
         document.getElementById('next-button').classList.remove('hidden');
     } else {
         document.getElementById('next-button').classList.add('hidden');
+        const backButton = stepElement.nextElementSibling;
+        if (backButton && backButton.classList.contains('back-button')) {
+            backButton.classList.remove('hidden');
+        }
     }
 }
 
@@ -59,11 +57,14 @@ function typeEffect(element) {
             setTimeout(type, 50); // Adjust typing speed here
         } else {
             element.classList.remove('typing');
-            element.style.whiteSpace = 'normal'; // Apply this style to allow wrapping after typing
         }
     }
 
     type();
+}
+
+function backToExercises() {
+    window.location.href = 'page2.html';
 }
 
 document.addEventListener('DOMContentLoaded', () => {

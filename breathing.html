@@ -18,39 +18,52 @@
             <button class="exercise-button" onclick="showSteps('progressive')">Progressive Muscle Relaxation</button>
         </div>
         <div id="steps-container" class="hidden">
+            <!-- Diaphragmatic Breathing -->
             <div class="step hidden" id="diaphragmatic-step-1">Sit or lie down comfortably.</div>
             <div class="step hidden" id="diaphragmatic-step-2">Place one hand on your chest and the other on your abdomen.</div>
             <div class="step hidden" id="diaphragmatic-step-3">Inhale deeply through your nose, letting your abdomen rise while keeping your chest relatively still.</div>
             <div class="step hidden" id="diaphragmatic-step-4">Exhale slowly through your mouth, letting your abdomen fall.</div>
             <div class="step hidden" id="diaphragmatic-step-5">Repeat several times, focusing on the sensation of your breath.</div>
+            <button class="back-button hidden" onclick="backToExercises()">Back to Exercises</button>
 
+            <!-- 4-7-8 Breathing Technique -->
             <div class="step hidden" id="478-step-1">Inhale through your nose for 4 seconds.</div>
             <div class="step hidden" id="478-step-2">Hold your breath for 7 seconds.</div>
             <div class="step hidden" id="478-step-3">Exhale completely through your mouth for 8 seconds.</div>
             <div class="step hidden" id="478-step-4">Repeat for 4 breath cycles.</div>
+            <button class="back-button hidden" onclick="backToExercises()">Back to Exercises</button>
 
+            <!-- Box Breathing -->
             <div class="step hidden" id="box-step-1">Inhale through your nose for 4 seconds.</div>
             <div class="step hidden" id="box-step-2">Hold your breath for 4 seconds.</div>
             <div class="step hidden" id="box-step-3">Exhale completely through your mouth for 4 seconds.</div>
             <div class="step hidden" id="box-step-4">Hold your breath for 4 seconds.</div>
             <div class="step hidden" id="box-step-5">Repeat for 8 breath cycles.</div>
+            <button class="back-button hidden" onclick="backToExercises()">Back to Exercises</button>
 
+            <!-- Mindful Breathing -->
             <div class="step hidden" id="mindful-step-1">Focus on the sensation of your breath.</div>
             <div class="step hidden" id="mindful-step-2">Inhale deeply through your nose.</div>
             <div class="step hidden" id="mindful-step-3">Exhale slowly through your mouth.</div>
             <div class="step hidden" id="mindful-step-4">If your mind wanders, gently bring it back to the sensation of your breath.</div>
             <div class="step hidden" id="mindful-step-5">Continue for 5-10 minutes.</div>
+            <button class="back-button hidden" onclick="backToExercises()">Back to Exercises</button>
 
+            <!-- Counting Breaths -->
             <div class="step hidden" id="counting-step-1">Inhale deeply through your nose while counting to 4.</div>
             <div class="step hidden" id="counting-step-2">Exhale slowly through your mouth while counting to 6 or 8.</div>
             <div class="step hidden" id="counting-step-3">Repeat for several breath cycles focusing on extending the exhale.</div>
+            <button class="back-button hidden" onclick="backToExercises()">Back to Exercises</button>
 
+            <!-- Progressive Muscle Relaxation -->
             <div class="step hidden" id="progressive-step-1">Find a comfortable place to sit or lie down.</div>
             <div class="step hidden" id="progressive-step-2">Inhale and tense your toes for 5 seconds.</div>
             <div class="step hidden" id="progressive-step-3">Exhale and relax your toes.</div>
             <div class="step hidden" id="progressive-step-4">Work your way up your body, tensing and relaxing each muscle group.</div>
             <div class="step hidden" id="progressive-step-5">Finish with your face and head.</div>
+            <button class="back-button hidden" onclick="backToExercises()">Back to Exercises</button>
 
+            <!-- Next Button -->
             <button id="next-button" class="next-button hidden" onclick="nextStep()">Next</button>
         </div>
     </div>
