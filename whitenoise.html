@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmCloud - White Noise Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">White Noise Settings</h1>
+        <div class="controls">
+            <label for="audioSelect">Choose White Noise:</label>
+            <select id="audioSelect" onchange="changeAudio()">
+                <option value="whitenoise1.mp3">White Noise 1</option>
+                <option value="whitenoise2.mp3">White Noise 2</option>
+                <!-- Add more options as needed -->
+            </select>
+            <br>
+            <label for="volumeControl">Volume:</label>
+            <input type="range" id="volumeControl" min="0" max="100" value="50" onchange="setVolume()">
+            <br>
+            <button onclick="toggleMute()">Mute/Unmute</button>
+        </div>
+        <div class="credits">
+            <p>White Noise audio clips credited to their respective sources.</p>
+        </div>
+    </div>
+
+    <audio id="whiteNoiseAudio" loop>
+        <source id="audioSource" src="whitenoise1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        let audioElement = document.getElementById('whiteNoiseAudio');
+        let audioSource = document.getElementById('audioSource');
+
+        function changeAudio() {
+            let audioSelect = document.getElementById('audioSelect');
+            let audioFile = audioSelect.value;
+            audioSource.src = audioFile;
+            audioElement.load();
+            audioElement.play();
+        }
+
+        function setVolume() {
+            let volume = document.getElementById('volumeControl').value;
+            audioElement.volume = volume / 100;
+        }
+
+        function toggleMute() {
+            audioElement.muted = !audioElement.muted;
+        }
+
+        // Autoplay the initial sound
+        window.onload = function() {
+            audioElement.play();
+        };
+    </script>
+</body>
+</html>

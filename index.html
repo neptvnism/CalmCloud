@@ -11,12 +11,29 @@
         <h1 class="title">Guide Through an Anxiety Attack</h1>
         <p class="description">Welcome to CalmCloud. This guide will help you navigate through your anxiety or panic attack with step-by-step instructions and soothing exercises. Take a deep breath, and let's begin.</p>
         <button class="start-button" onclick="startGuide()">Start the Guide</button>
+        <button class="whitenoise-button" onclick="openWhiteNoiseSettings()">White Noise Settings</button>
     </div>
+
+    <audio id="whiteNoiseAudio" loop>
+        <source id="audioSource" src="whitenoise1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <script>
         function startGuide() {
             window.location.href = 'page2.html';
         }
+
+        function openWhiteNoiseSettings() {
+            window.location.href = 'whitenoise.html';
+        }
+
+        let audioElement = document.getElementById('whiteNoiseAudio');
+
+        // Autoplay the initial sound
+        window.onload = function() {
+            audioElement.play();
+        };
     </script>
 </body>
 </html>

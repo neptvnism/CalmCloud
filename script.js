@@ -1,12 +1,12 @@
 let currentStep = 1;
 let currentExercise = '';
 const exercises = {
-    54321: 6,
-    mindfulness: 6,
-    objects: 3,
-    visualization: 5,
-    bodyscan: 4,
-    movement: 4
+    diaphragmatic: 5,
+    '478': 4,
+    box: 5,
+    mindful: 5,
+    counting: 3,
+    progressive: 5
 };
 
 function showSteps(exercise) {
@@ -24,9 +24,13 @@ function showStep(step) {
     typeEffect(stepElement);
 
     if (step < exercises[currentExercise]) {
-        document.getElementById('next-button').classList.remove('hidden');
+        document.querySelectorAll('.next-button').forEach(button => {
+            button.classList.remove('hidden');
+        });
     } else {
-        document.getElementById('next-button').classList.add('hidden');
+        document.querySelectorAll('.next-button').forEach(button => {
+            button.classList.add('hidden');
+        });
         const backButton = stepElement.nextElementSibling;
         if (backButton && backButton.classList.contains('back-button')) {
             backButton.classList.remove('hidden');
