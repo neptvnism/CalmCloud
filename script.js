@@ -7,6 +7,12 @@ const exercises = {
     mindful: 5,
     counting: 3,
     progressive: 5,
+    54321: 6,
+    mindfulness: 6,
+    objects: 3,
+    visualization: 5,
+    bodyscan: 4,
+    movement: 4
 };
 
 function showSteps(exercise) {
@@ -53,7 +59,7 @@ function typeEffect(element) {
             setTimeout(type, 50); // Adjust typing speed here
         } else {
             element.classList.remove('typing');
-            element.style.whiteSpace = 'normal';
+            element.style.whiteSpace = 'normal'; // Apply this style to allow wrapping after typing
         }
     }
 
