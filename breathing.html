@@ -10,7 +10,7 @@
     <div class="container">
         <h1 class="title">Breathing Exercises</h1>
         <div class="exercise-buttons">
-            <button class="exercise-button" onclick="showSteps('diaphragmatic')">Diaphragmatic Breathing (Deep Belly Breathing)</button>
+            <button class="exercise-button" onclick="showSteps('diaphragmatic')">Diaphragmatic Breathing</button>
             <button class="exercise-button" onclick="showSteps('478')">4-7-8 Breathing Technique</button>
             <button class="exercise-button" onclick="showSteps('box')">Box Breathing</button>
             <button class="exercise-button" onclick="showSteps('mindful')">Mindful Breathing</button>
@@ -19,111 +19,47 @@
         </div>
         <div id="steps-container" class="hidden">
             <!-- Diaphragmatic Breathing -->
-            <div class="step hidden" id="diaphragmatic-step-1">Sit or lie down comfortably.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="diaphragmatic-step-2">Place one hand on your chest and the other on your abdomen.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="diaphragmatic-step-3">Inhale deeply through your nose, letting your abdomen rise while keeping your chest relatively still.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="diaphragmatic-step-4">Exhale slowly through your mouth, letting your abdomen fall.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="diaphragmatic-step-5">Repeat several times, focusing on the sensation of your breath.
-                <button class="back-button" onclick="backToExercises()">Back to Exercises</button>
-            </div>
+            <div class="step hidden" id="diaphragmatic-step-1">Sit or lie down comfortably.</div>
+            <div class="step hidden" id="diaphragmatic-step-2">Place one hand on your chest and the other on your abdomen.</div>
+            <div class="step hidden" id="diaphragmatic-step-3">Inhale deeply through your nose, letting your abdomen rise while keeping your chest relatively still.</div>
+            <div class="step hidden" id="diaphragmatic-step-4">Exhale slowly through your mouth, letting your abdomen fall.</div>
+            <div class="step hidden" id="diaphragmatic-step-5">Repeat several times, focusing on the sensation of your breath.</div>
 
             <!-- 4-7-8 Breathing Technique -->
-            <div class="step hidden" id="478-step-1">Inhale through your nose for 4 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="478-step-2">Hold your breath for 7 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="478-step-3">Exhale completely through your mouth for 8 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="478-step-4">Repeat for 4 breath cycles.
-                <button class="back-button" onclick="backToExercises()">Back to Exercises</button>
-            </div>
+            <div class="step hidden" id="478-step-1">Inhale quietly through your nose for a count of 4.</div>
+            <div class="step hidden" id="478-step-2">Hold your breath for a count of 7.</div>
+            <div class="step hidden" id="478-step-3">Exhale completely through your mouth for a count of 8, making a whooshing sound.</div>
+            <div class="step hidden" id="478-step-4">Repeat this cycle for a few rounds.</div>
 
             <!-- Box Breathing -->
-            <div class="step hidden" id="box-step-1">Inhale through your nose for 4 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="box-step-2">Hold your breath for 4 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="box-step-3">Exhale completely through your mouth for 4 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="box-step-4">Hold your breath for 4 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="box-step-5">Repeat for 8 breath cycles.
-                <button class="back-button" onclick="backToExercises()">Back to Exercises</button>
-            </div>
+            <div class="step hidden" id="box-step-1">Inhale slowly through your nose for a count of 4.</div>
+            <div class="step hidden" id="box-step-2">Hold your breath for a count of 4.</div>
+            <div class="step hidden" id="box-step-3">Exhale slowly through your mouth for a count of 4.</div>
+            <div class="step hidden" id="box-step-4">Hold your breath again for a count of 4.</div>
+            <div class="step hidden" id="box-step-5">Repeat the cycle, visualizing each side of a square as you breathe.</div>
 
             <!-- Mindful Breathing -->
-            <div class="step hidden" id="mindful-step-1">Focus on the sensation of your breath.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="mindful-step-2">Inhale deeply through your nose.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="mindful-step-3">Exhale slowly through your mouth.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="mindful-step-4">If your mind wanders, gently bring it back to the sensation of your breath.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="mindful-step-5">Continue for 5-10 minutes.
-                <button class="back-button" onclick="backToExercises()">Back to Exercises</button>
-            </div>
+            <div class="step hidden" id="mindful-step-1">Find a quiet place and sit or lie down comfortably.</div>
+            <div class="step hidden" id="mindful-step-2">Close your eyes and bring your attention to your breath.</div>
+            <div class="step hidden" id="mindful-step-3">Notice the sensation of each inhale and exhale without trying to change it.</div>
+            <div class="step hidden" id="mindful-step-4">If your mind wanders, gently bring your focus back to your breath.</div>
+            <div class="step hidden" id="mindful-step-5">Practice for several minutes, gradually increasing the duration as you become more comfortable.</div>
 
             <!-- Counting Breaths -->
-            <div class="step hidden" id="counting-step-1">Inhale deeply through your nose while counting to 4.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="counting-step-2">Exhale slowly through your mouth while counting to 6 or 8.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="counting-step-3">Repeat for several breath cycles focusing on extending the exhale.
-                <button class="back-button" onclick="backToExercises()">Back to Exercises</button>
-            </div>
+            <div class="step hidden" id="counting-step-1">Sit quietly and close your eyes.</div>
+            <div class="step hidden" id="counting-step-2">Inhale slowly and count each breath in your mind, starting from 1 up to 10.</div>
+            <div class="step hidden" id="counting-step-3">If you lose count or get distracted, simply start over from 1.</div>
 
-            <!-- Progressive Muscle Relaxation -->
-            <div class="step hidden" id="progressive-step-1">Find a comfortable place to sit or lie down.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="progressive-step-2">Inhale and tense your toes for 5 seconds.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="progressive-step-3">Exhale and relax your toes.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="progressive-step-4">Work your way up your body, tensing and relaxing each muscle group.
-                <button class="next-button" onclick="nextStep()">Next</button>
-            </div>
-            <div class="step hidden" id="progressive-step-5">Finish with your face and head.
-                <button class="back-button" onclick="backToExercises()">Back to Exercises</button>
-            </div>
+            <!-- Progressive Muscle Relaxation (PMR) with Breathing -->
+            <div class="step hidden" id="progressive-step-1">Combine deep breathing with progressive relaxation of muscle groups.</div>
+            <div class="step hidden" id="progressive-step-2">Start with your toes and work your way up, tensing each muscle group as you inhale and relaxing as you exhale.</div>
+            <div class="step hidden" id="progressive-step-3">This can help release physical tension associated with anxiety.</div>
+
+            <!-- Next Button -->
+            <button id="next-button" class="next-button hidden" onclick="nextStep()">Next</button>
         </div>
     </div>
-    <audio id="whiteNoiseAudio" loop>
-        <source id="audioSource" src="whitenoise1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <script src="script.js"></script>
-    <script>
-        let audioElement = document.getElementById('whiteNoiseAudio');
 
-        // Autoplay the initial sound
-        window.onload = function() {
-            audioElement.play();
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
