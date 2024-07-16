@@ -1,26 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CalmCloud - Exercises</title>
+    <title>CalmCloud - Breathing and Grounding Exercises</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
-        <h1 class="title">Choose an Exercise</h1>
-        <button class="exercise-button" onclick="startBreathingExercises()">Breathing Exercises</button>
-        <button class="exercise-button" onclick="startGroundingExercises()">Grounding Exercises</button>
+        <h1 class="title">Breathing and Grounding Exercises</h1>
+        <div class="exercise-buttons">
+            <!-- Breathing Exercises -->
+            <button class="exercise-button" onclick="showSteps('diaphragmatic')">Diaphragmatic Breathing</button>
+            <button class="exercise-button" onclick="showSteps('478')">4-7-8 Breathing Technique</button>
+            <button class="exercise-button" onclick="showSteps('box')">Box Breathing</button>
+            <button class="exercise-button" onclick="showSteps('mindful')">Mindful Breathing</button>
+            <button class="exercise-button" onclick="showSteps('counting')">Counting Breaths</button>
+            <button class="exercise-button" onclick="showSteps('progressive')">Progressive Muscle Relaxation</button>
+            <!-- Grounding Exercises -->
+            <button class="exercise-button" onclick="showSteps('54321')">5-4-3-2-1 Technique</button>
+            <button class="exercise-button" onclick="showSteps('mindfulness')">Mindfulness of Surroundings</button>
+            <button class="exercise-button" onclick="showSteps('objects')">Grounding Objects</button>
+            <button class="exercise-button" onclick="showSteps('visualization')">Breathing with Visualization</button>
+            <button class="exercise-button" onclick="showSteps('bodyscan')">Body Scan Meditation</button>
+            <button class="exercise-button" onclick="showSteps('movement')">Walking or Movement</button>
+        </div>
+        <div id="steps-container" class="hidden">
+            <!-- Steps for Breathing Exercises -->
+            <div class="step hidden" id="diaphragmatic-step-1">Sit or lie down comfortably.</div>
+            <div class="step hidden" id="diaphragmatic-step-2">Place one hand on your chest and the other on your abdomen.</div>
+            <div class="step hidden" id="diaphragmatic-step-3">Inhale deeply through your nose, letting your abdomen rise while keeping your chest relatively still.</div>
+            <div class="step hidden" id="diaphragmatic-step-4">Exhale slowly through your mouth, letting your abdomen fall.</div>
+            <div class="step hidden" id="diaphragmatic-step-5">Repeat
+ several times, focusing on the sensation of your breath.</div>
+
+            <div class="step hidden" id="478-step-1">Inhale quietly through your nose for a count of 4.</div>
+            <div class="step hidden" id="478-step-2">Hold your breath for a count of 7.</div>
+            <div class="step hidden" id="478-step-3">Exhale completely through your mouth for a count of 8, making a whooshing sound.</div>
+            <div class="step hidden" id="478-step-4">Repeat this cycle for a few rounds.</div>
+
+            <div class="step hidden" id="box-step-1">Inhale slowly through your nose for a count of 4.</div>
+            <div class="step hidden" id="box-step-2">Hold your breath for a count of 4.</div>
+            <div class="step hidden" id="box-step-3">Exhale slowly through your mouth for a count of 4.</div>
+            <div class="step hidden" id="box-step-4">Hold your breath again for a count of 4.</div>
+            <div class="step hidden" id="box-step-5">Repeat the cycle, visualizing each side of a square as you breathe.</div>
+
+            <div class="step hidden" id="mindful-step-1">Find a quiet place and sit or lie down comfortably.</div>
+            <div class="step hidden" id="mindful-step-2">Close your eyes and bring your attention to your breath.</div>
+            <div class="step hidden" id="mindful-step-3">Notice the sensation of each inhale and exhale without trying to change it.</div>
+            <div class="step hidden" id="mindful-step-4">If your mind wanders, gently bring your focus back to your breath.</div>
+            <div class="step hidden" id="mindful-step-5">Practice for several minutes, gradually increasing the duration as you become more comfortable.</div>
+
+            <div class="step hidden" id="counting-step-1">Sit quietly and close your eyes.</div>
+            <div class="step hidden" id="counting-step-2">Inhale slowly and count each breath in your mind, starting from 1 up to 10.</div>
+            <div class="step hidden" id="counting-step-3">If you lose count or get distracted, simply start over from 1.</div>
+
+            <div class="step hidden" id="progressive-step-1">Combine deep breathing with progressive relaxation of muscle groups.</div>
+            <div class="step hidden" id="progressive-step-2">Start with your toes and work your way up, tensing each muscle group as you inhale and relaxing as you exhale.</div>
+            <div class="step hidden" id="progressive-step-3">This can help release physical tension associated with anxiety.</div>
+
+            <!-- Steps for Grounding Exercises -->
+            <div class="step hidden" id="54321-step-1">Name 5 things you can see around you.</div>
+            <div class="step hidden" id="54321-step-2">Name 4 things you can touch or feel (e.g., the texture of your clothing, the ground beneath your feet).</div>
+            <div class="step hidden" id="54321-step-3">Name 3 things you can hear right now.</div>
+            <div class="step hidden" id="54321-step-4">Name 2 things you can smell or that bring you comfort (if possible).</div>
+            <div class="step hidden" id="54321-step-5">Name 1 thing you like about yourself or feel grateful for.</div>
+            <div class="step hidden" id="54321-step-6">This technique helps to shift focus away from anxiety and back to the present moment.</div>
+
+            <div class="step hidden" id="mindfulness-step-1">Sit or stand comfortably and take a few deep breaths.</div>
+            <div class="step hidden" id="mindfulness-step-2">Notice your surroundings without judgment.</div>
+            <div class="step hidden" id="mindfulness-step-3">Pay attention to the colors, shapes, and textures of objects around you.</div>
+            <div class="step hidden" id="mindfulness-step-4">Listen to the sounds in your environment, both near and far.</div>
+            <div class="step hidden" id="mindfulness-step-5">Feel the sensations of your body touching the ground or the chair.</div>
+            <div class="step hidden" id="mindfulness-step-6">This practice helps to anchor you in the present moment.</div>
+
+            <div class="step hidden" id="objects-step-1">Carry a small object with you (e.g., a smooth stone, a keychain, a piece of fabric).</div>
+            <div class="step hidden" id="objects-step-2">When you feel anxious, hold the object in your hand and focus on its texture, weight, and temperature.</div>
+            <div class="step hidden" id="objects-step-3">Use the object as a reminder to stay grounded in the present.</div>
+
+            <div class="step hidden" id="visualization-step-1">Sit comfortably and close your eyes.</div>
+            <div class="step hidden" id="visualization-step-2">Take slow, deep breaths.</div>
+            <div class="step hidden" id="visualization-step-3">As you inhale, imagine breathing in calmness and peace.</div>
+            <div class="step hidden" id="visualization-step-4">As you exhale, imagine releasing tension and anxiety.</div>
+            <div class="step hidden" id="visualization-step-5">Visualize yourself rooted to the ground like a tree, with your worries flowing away like leaves in the wind.</div>
+
+            <div class="step hidden" id="bodyscan-step-1">Close your eyes and focus on your breath for a few moments.</div>
+            <div class="step hidden" id="bodyscan-step-2">Gradually bring your attention to different parts of your body, starting from your toes and moving upward.</div>
+            <div class="step hidden" id="bodyscan-step-3">Notice any sensations, tension, or discomfort without trying to change them.</div>
+            <div class="step hidden" id="bodyscan-step-4">As you breathe, imagine releasing tension with each exhale, allowing your body to feel more relaxed and grounded.</div>
+
+            <div class="step hidden" id="movement-step-1">Take a slow walk, focusing on each step you take.</div>
+            <div class="step hidden" id="movement-step-2">Feel the ground beneath your feet and the movement of your body.</div>
+            <div class="step hidden" id="movement-step-3">Notice the sights, sounds, and sensations around you as you move.</div>
+            <div class="step hidden" id="movement-step-4">Physical movement can help release pent-up energy and promote a sense of grounding.</div>
+
+            <!-- Next Button -->
+            <button id="next-button" class="next-button hidden" onclick="nextStep()">Next</button>
+        </div>
     </div>
 
-    <script>
-        function startBreathingExercises() {
-            window.location.href = 'breathing.html';
-        }
-
-        function startGroundingExercises() {
-            window.location.href = 'grounding.html';
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
