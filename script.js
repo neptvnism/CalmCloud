@@ -1,76 +1,66 @@
+let currentExercise = null;
 let currentStep = 1;
-let currentExercise = '';
-const exercises = {
-    diaphragmatic: 5,
-    '478': 4,
-    box: 5,
-    mindful: 5,
-    counting: 3,
-    progressive: 5
-};
 
 function showSteps(exercise) {
+    resetSteps();
     currentExercise = exercise;
     currentStep = 1;
-    document.querySelector('.exercise-buttons').style.display = 'none';
-    document.getElementById('steps-container').classList.remove('hidden');
-    showStep(currentStep);
-}
 
-function showStep(step) {
-    const stepElement = document.getElementById(`${currentExercise}-step-${step}`);
-    stepElement.classList.add('visible');
-    stepElement.classList.remove('hidden');
-    typeEffect(stepElement);
+    const stepsContainer = document.getElementById('steps-container');
+    stepsContainer.classList.remove('hidden');
 
-    if (step < exercises[currentExercise]) {
-        document.querySelectorAll('.next-button').forEach(button => {
-            button.classList.remove('hidden');
-        });
-    } else {
-        document.querySelectorAll('.next-button').forEach(button => {
-            button.classList.add('hidden');
-        });
-        const backButton = stepElement.nextElementSibling;
-        if (backButton && backButton.classList.contains('back-button')) {
-            backButton.classList.remove('hidden');
-        }
+    const exerciseButtonsContainer = document.getElementById('exercise-buttons-container');
+    exerciseButtonsContainer.classList.add('hidden');
+
+    const firstStep = document.getElementById(`${exercise}-step-1`);
+    if (firstStep) {
+        firstStep.classList.add('visible', 'fade-in');
     }
+
+    const nextButton = document.getElementById('next-button');
+    nextButton.classList.remove('hidden');
 }
 
 function nextStep() {
     const currentStepElement = document.getElementById(`${currentExercise}-step-${currentStep}`);
-    currentStepElement.classList.remove('visible');
-    currentStepElement.classList.add('hidden');
-    currentStep++;
-    if (currentStep <= exercises[currentExercise]) {
-        showStep(currentStep);
+    const nextStepElement = document.getElementById(`${currentExercise}-step-${currentStep + 1}`);
+
+    if (currentStepElement) {
+        currentStepElement.classList.remove('visible', 'fade-in');
+    }
+
+    if (nextStepElement) {
+        nextStepElement.classList.add('visible', 'fade-in');
+        currentStep++;
+    } else {
+        // If no more steps, show the Finish button and hide the Next button
+        const nextButton = document.getElementById('next-button');
+        nextButton.classList.add('hidden');
+
+        const finishButton = document.getElementById('finish-button');
+        finishButton.classList.remove('hidden');
     }
 }
 
-function typeEffect(element) {
-    const text = element.textContent;
-    element.textContent = '';
-    element.classList.add('typing');
-    let i = 0;
+function resetSteps() {
+    const visibleSteps = document.querySelectorAll('.step.visible');
+    visibleSteps.forEach(step => {
+        step.classList.remove('visible', 'fade-in');
+    });
 
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 50); // Adjust typing speed here
-        } else {
-            element.classList.remove('typing');
-        }
-    }
+    const nextButton = document.getElementById('next-button');
+    nextButton.classList.add('hidden');
 
-    type();
+    const finishButton = document.getElementById('finish-button');
+    finishButton.classList.add('hidden');
 }
 
-function backToExercises() {
-    window.location.href = 'page2.html';
-}
+function resetView() {
+    resetSteps();
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('#steps-container').classList.add('hidden');
-});
+    const stepsContainer = document.getElementById('steps-container');
+    stepsContainer.classList.add('hidden');
+
+    const exerciseButtonsContainer = document.getElementById('exercise-buttons-container');
+    exerciseButtonsContainer.classList.remove('hidden');
+}

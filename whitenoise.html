@@ -9,22 +9,18 @@
 <body>
     <div class="container">
         <h1 class="title">White Noise Settings</h1>
-        <div class="controls">
-            <label for="audioSelect">Choose White Noise:</label>
-            <select id="audioSelect" onchange="changeAudio()">
+        <div class="control-group">
+            <label for="whitenoise-select">Choose White Noise:</label>
+            <select id="whitenoise-select" onchange="changeWhiteNoise()">
                 <option value="whitenoise1.mp3">White Noise 1</option>
                 <option value="whitenoise2.mp3">White Noise 2</option>
-                <!-- Add more options as needed -->
             </select>
-            <br>
-            <label for="volumeControl">Volume:</label>
-            <input type="range" id="volumeControl" min="0" max="100" value="50" onchange="setVolume()">
-            <br>
-            <button onclick="toggleMute()">Mute/Unmute</button>
         </div>
-        <div class="credits">
-            <p>White Noise audio clips credited to their respective sources.</p>
+        <div class="control-group">
+            <label for="volume-slider">Volume:</label>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" onchange="setVolume(this.value)" />
         </div>
+        <button onclick="toggleMute()">Mute/Unmute</button>
     </div>
 
     <audio id="whiteNoiseAudio" loop>
@@ -33,28 +29,28 @@
     </audio>
 
     <script>
-        let audioElement = document.getElementById('whiteNoiseAudio');
-        let audioSource = document.getElementById('audioSource');
-
-        function changeAudio() {
-            let audioSelect = document.getElementById('audioSelect');
-            let audioFile = audioSelect.value;
-            audioSource.src = audioFile;
+        function changeWhiteNoise() {
+            const audioElement = document.getElementById('whiteNoiseAudio');
+            const audioSource = document.getElementById('audioSource');
+            const selectedNoise = document.getElementById('whitenoise-select').value;
+            audioSource.src = selectedNoise;
             audioElement.load();
             audioElement.play();
         }
 
-        function setVolume() {
-            let volume = document.getElementById('volumeControl').value;
-            audioElement.volume = volume / 100;
+        function setVolume(volume) {
+            const audioElement = document.getElementById('whiteNoiseAudio');
+            audioElement.volume = volume;
         }
 
         function toggleMute() {
+            const audioElement = document.getElementById('whiteNoiseAudio');
             audioElement.muted = !audioElement.muted;
         }
 
-        // Autoplay the initial sound
         window.onload = function() {
+            const audioElement = document.getElementById('whiteNoiseAudio');
+            audioElement.volume = 0.5; // Set initial volume to 50%
             audioElement.play();
         };
     </script>

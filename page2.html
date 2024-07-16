@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalmCloud - Breathing and Grounding Exercises</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="container">
         <h1 class="title">Breathing and Grounding Exercises</h1>
-        <div class="exercise-buttons">
+        <div id="exercise-buttons-container" class="exercise-buttons">
             <!-- Breathing Exercises -->
             <button class="exercise-button" onclick="showSteps('diaphragmatic')">Diaphragmatic Breathing</button>
             <button class="exercise-button" onclick="showSteps('478')">4-7-8 Breathing Technique</button>
@@ -33,8 +31,7 @@
             <div class="step hidden" id="diaphragmatic-step-2">Place one hand on your chest and the other on your abdomen.</div>
             <div class="step hidden" id="diaphragmatic-step-3">Inhale deeply through your nose, letting your abdomen rise while keeping your chest relatively still.</div>
             <div class="step hidden" id="diaphragmatic-step-4">Exhale slowly through your mouth, letting your abdomen fall.</div>
-            <div class="step hidden" id="diaphragmatic-step-5">Repeat
- several times, focusing on the sensation of your breath.</div>
+            <div class="step hidden" id="diaphragmatic-step-5">Repeat several times, focusing on the sensation of your breath.</div>
 
             <div class="step hidden" id="478-step-1">Inhale quietly through your nose for a count of 4.</div>
             <div class="step hidden" id="478-step-2">Hold your breath for a count of 7.</div>
@@ -96,12 +93,12 @@
             <div class="step hidden" id="movement-step-3">Notice the sights, sounds, and sensations around you as you move.</div>
             <div class="step hidden" id="movement-step-4">Physical movement can help release pent-up energy and promote a sense of grounding.</div>
 
-            <!-- Next Button -->
+            <!-- Next and Finish Buttons -->
             <button id="next-button" class="next-button hidden" onclick="nextStep()">Next</button>
+            <button id="finish-button" class="next-button hidden" onclick="resetView()">Finish</button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
